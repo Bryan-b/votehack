@@ -1,0 +1,65 @@
+<section id="feature" class="sec_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sec_head">
+                        <h3>Election <span>Reports</span></h3>
+                        <span class="sec_line"></span>
+
+                    </div>
+                </div>
+            </div>
+             <div class="container">
+            <div class="row contact_area">
+                <div class="col-md-7 contact_form wow fadeInUp">
+                    <h3>Please chose election date</h3>
+                    <div class="row">
+                        <form id="ajax-contact" method="post" action="http://evoting.ust.edu.ng/setup.html?" name="registration">
+                    <div class="field col-sm-6" id="selectPos">
+                      <input type="text" class="form-control" id="start" placeholder="Start Date" name="sdate" required>
+                    </div>
+
+                     <div class="field col-sm-6" id="selectPos2">
+                      <input type="text" class="form-control" id="end" placeholder="End Date" name="edate" required>
+                    </div>
+                    <div id="form-messages"></div>
+                <div class="field col-sm-6">
+                                <button type="button" onclick="showAjax('ajax-contact','includes/ajaxaction359c.html?Action=setSEdate','form-messages')">Set Date</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+          <!--      <div class="col-md-5 contact_address">
+
+                </div>-->
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+<script>
+$(document).ready(function(){
+ $(function () {
+             $('#start').datetimepicker({
+                 format : "YYYY-MM-DD H:m",
+                 sideBySide: true,
+
+             }).on('changeDate', function (e) {
+                 $('#start').focus();
+                 $('#start').focus();
+             });
+             $('#end').datetimepicker({
+                 format : "YYYY-MM-DD H:m",
+                 sideBySide: true
+             }); H:m
+         });
+        var startdate = getItem("sdate");
+        var edate = getItem("edate");
+        $('#start').val(startdate);
+        $('#end').val(edate);
+
+ });
+
+</script>

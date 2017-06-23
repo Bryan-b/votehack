@@ -1,0 +1,124 @@
+@media(max-width: 768px){
+	.banner_content h2{
+		font-size: 32px;
+	}
+	.offer_img img{
+		margin-top: 40%;
+	}
+	.single_feature h3{
+		font-size: 20px;
+	}
+}
+@media(max-width: 767px){
+	.sec_padding{
+		padding: 40px 0 !important;
+	}
+	header{
+		position: fixed;
+		background: #3AB3DF;
+		height: 70px;
+		padding: 5px 0;
+	}
+	header .navbar li a{
+		color: #333;
+	}
+	.navbar-collapse ul{
+        border-top: 1px solid #f2f2f2;
+        float: left;
+        width: 100%;
+        text-align: center;
+        display: block;
+        margin: 0;
+        background: #fff;
+        padding: 5px 15px;
+        margin-top: 6px;
+    }
+    .navbar-collapse ul li{
+    	border-bottom: 1px solid #f2f2f2;
+    }
+    .navbar-collapse ul li:last-child{
+    	border-bottom:0;
+    }
+	header .navbar-brand{
+		max-width: 130px;
+	}
+	.navbar-toggle{
+		background: #fff;
+		padding: 9px 15px;
+	}
+	.offer_img img{
+		margin-top: 0;
+	}
+	#contact_form .contact_form, .contact_address{
+		padding: 30px;
+	}
+
+	.navbar-collapse{
+		position: relative;
+		z-index: 999;
+	}
+	#banner{
+		text-align: center;
+		margin-top: 70px;
+		padding: 60px 0;
+	}
+	.banner_content h2{
+		font-size: 30px;
+	}
+	.btn_banner:last-child{
+		margin-top: 30px;
+	}
+	.single_offer{
+		text-align: center;
+	}
+	.offer_img{
+		margin-bottom: 30px;
+	}
+	#video h1{
+		font-size: 22px;
+		line-height: 30px;
+		text-transform: capitalize;
+	}
+	#testimonial_area img{
+		display: inline-block;
+	}
+	.btn_download{
+		border-radius: 30px;
+		padding: 12px 25px;
+		margin-bottom: 30px;
+	}
+	.single_blog{
+		margin-bottom: 30px;
+	}
+	.socialList li a span{
+		display: none !important;;
+	}
+	.socialList li a{
+		margin:0 10px;
+		font-size: 20px;
+	}
+}
+
+@media all and (min-width: 568px) and (max-width: 736px) {
+   .banner_left, .banner_content, .offer_box_main, .offer_box{
+   	display: inherit !important;
+   }
+ 	.offer_img img{
+	margin: auto;
+ 	}
+
+}
+
+@media(max-width: 480px){
+	#subscribe form input{
+		padding: 0 90px 0 15px;
+		height: 40px;
+	}
+	#subscribe .sub_btn{
+		line-height: 35px;
+		min-width: 100px;
+	}
+	.banner_content h1{
+		font-size: 22px;
+	}
+}

@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+evoting.ust.edu.ng	TRUE	/	FALSE	1999999999	PHPSESSID	7tf1kb6h6pm8i0rdt9a29k7j45
+

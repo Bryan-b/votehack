@@ -1,0 +1,860 @@
+/*******************************************************
+
+Template Name: MATMAX Material Design App Landing Template
+Template URI: http://ennovision.com
+Description: This template made for software, app promote or Product Promotion purpose
+Author: Themeos
+Author URI: https://www.fiverr.com/themeos
+Version: 1.0
+
+
+*******************************************************
+
+CSS INDEX
+=================
+
+1. Theme Default Css
+2. Header
+3. Banner
+4. Details
+5. Feature
+6. Video
+7. Screenshot
+8. Review
+9. Price Table
+10. Donwload
+11. Blog
+12. Contact Form
+13. Subscribe
+14. Back To Top
+
+
+*******************************************************/
+/************************
+1. Theme Default Css
+*************************/
+
+body{
+	color: #292b2c;
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+}
+h1,h2,h3,h4,h5{
+	font-weight: 300;
+}
+img{
+	max-width: 100%;
+}
+
+/*******Preloader Css*********/
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    z-index: 99999;
+}
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+}
+.dot1,
+.dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #3AB3DF;
+    border-radius: 100%;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+.dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+@-webkit-keyframes sk-rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+@keyframes sk-rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+@-webkit-keyframes sk-bounce {
+    0%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+/*******Preloader Css End*******/
+
+.overlay{
+	position: absolute;
+	background: #000;
+	opacity: .5;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+.sec_head{
+	text-align: center;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 50px;
+}
+.sec_head h3{
+	text-transform: uppercase;
+	font-weight: bold;
+    font-size: 30px;
+}
+.sec_head h3 span{
+	color: #3AB3DF;
+    transition: all .5s;
+}
+.sec_line{
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	border: 1px solid #3AB3DF;
+	border-radius: 50%;
+	position: relative;
+}
+.sec_line:after{
+	position: absolute;
+	content: "";
+	left: 15px;
+	top: 3.5px;
+	height: 1px;
+	width: 25px;
+	background: #3AB3DF;
+}
+.sec_line:before{
+	position: absolute;
+	content: "";
+	right: 15px;
+	top: 3.5px;
+	height: 1px;
+	width: 25px;
+	background: #3AB3DF;
+}
+.sec_padding{
+	padding: 80px 0;
+}
+.btn-default{
+	background: #3AB3DF;
+}
+.btn-default:hover{
+	background: #017ab6 !important;
+}
+a{
+	text-decoration: none !important;
+	color: inherit;
+}
+/*a:focus{
+	background: inherit !important;;
+}*/
+
+
+/************************
+2. Header
+*************************/
+header{
+	background:#3AB3DF;
+	padding: 20px 0;
+	position: fixed;
+	height: 90px;
+	width: 100%;
+	transition: all .5s;
+	z-index: 999;
+}
+.nav-flex-icons i{
+	color: #fff;
+}
+header .navbar li a{
+	color: #fff;
+    transition: all .5s;
+}
+header .navbar li a:hover{
+	background: none;
+}
+header .navbar li a:focus{
+    background: inherit;
+}
+header.sticky {
+  height: 70px;
+  transition: all .5s;
+  background: #3AB3DF;
+}
+
+
+header.sticky .navbar{
+	margin-top: -14px;
+	transition: all .5s;
+}
+header .navbar-brand{
+	margin-top: -5px;
+}
+header .navbar-brand img{
+	width: 114px;
+	transition: all .5s;
+}
+header.sticky .navbar-brand img{
+	width: 100px;
+	transition: all .5s;
+}
+header.sticky .navbar-brand{
+	margin-top: -2px;
+}
+header .navbar{
+	box-shadow: none;
+	transition: all .5s;
+}
+
+/************************
+3. Banner
+*************************/
+#banner{
+	background: url(../img/slide.jpg);
+	color: #fff;
+    background-size: cover;
+    background-position: center;
+	position: relative;
+	z-index: 1;
+    display: table;
+	overflow: hidden;
+}
+.banner_cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+#banner video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('../demosthenes.info/assets/images/polina.html') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+.stopfade {
+   opacity: .5;
+}
+
+.banner_left{
+	display: table;
+}
+.banner_content{
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
+}
+.banner_content h2{
+	font-size: 50px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+.banner_left button{
+	display: inline-block;
+}
+
+.banner_right img{
+	max-width: 90%;
+	margin-top: 50px;
+}
+.btn_banner{
+	display: inline-block;
+	padding: 10px 20px;
+	background: #3AB3DF;
+	color: #fff;
+	font-size: 16px;
+	min-width: 160px;
+	border-radius: 30px;
+	margin-right: 10px;
+	text-align: center;
+	border: 1px solid #3AB3DF;
+	transition: all .6s;
+}
+.btn_banner:hover{
+	background: transparent;
+	color: #fff;
+}
+
+/************************
+4. Details
+*************************/
+#feature{
+	background: #f2f2f2;
+	padding: 80px 0 40px 0;
+}
+#feature .sec_head{
+    margin-bottom: 70px;
+}
+.single_feature{
+    background: #f9f9fe;
+    padding: 0px 20px 20px 20px;
+    margin-bottom: 60px;
+	transition: all .6s;
+}
+.single_feature i{
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 15px;
+    transition: all .6s;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    background: #3AB3DF;
+    border-radius: 50%;
+    margin-top: -40px;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+
+}
+.single_feature:hover{
+	background: #3AB3DF;
+	box-shadow: 0 22px 40px rgba(0, 0, 0, 0.15);
+	color: #fff;
+
+}
+.single_feature:hover i{
+	color: #3AB3DF;
+	background: #f9f9fe;
+}
+
+/************************
+5. Feature
+*************************/
+
+#offer {
+    padding: 60px 0;
+    color: #333;
+}
+.offer_box_main {
+    display: table;
+}
+.offer_box {
+    display: table-cell;
+    vertical-align: middle;
+}
+.single_offer {
+    margin-bottom: 50px;
+    position: relative;
+}
+.single_offer span{
+	display: block;
+	height: 1px;
+	width: 100%;
+	background: #e4e4e4;
+	position: absolute;
+	left: 0;
+	bottom: -25px;
+}
+.single_offer i {
+    font-size: 40px;
+    color: #3AB3DF;
+    margin-bottom: 5px;
+}
+
+
+/************************
+6. Video
+*************************/
+
+#video {
+    padding: 100px 0;
+    background: url(http://evoting.ust.edu.ng/img/banner_bg_2.jpg) 0 0 no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
+    z-index: 1;
+    color: #fff;
+}
+#video:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: .7;
+    z-index: -1;
+}
+#video h1{
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: 500;
+}
+#video a {
+    display: inline-block;
+    padding: 5px 20px;
+    min-width: 150px;
+    border: 1px solid #3AB3DF;
+    border-radius: 40px;
+    background: #3AB3DF;
+    color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    font-size: 20px;
+    transition: all .6s;
+}
+#video a:hover{
+    background: transparent;
+}
+
+/************************
+7. Review
+*************************/
+
+#testimonial_area{
+	text-align: center;
+}
+#review_slide .user{
+	margin-bottom: 20px;
+}
+#review_slide .user img{
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+	border: 4px solid #3AB3DF;
+    margin: auto;
+}
+.single-item h4{
+	font-weight: 700;
+}
+.single-item .fa-quote-left{
+	color: #3AB3DF;
+}
+.review_star i{
+	color: #3AB3DF;
+}
+
+
+
+/************************
+8. Screenshot
+*************************/
+#screenshots{
+	background: #f2f2f2;
+}
+.sin-screenshot { z-index: 9 }
+.sin-screenshot a {
+    display: block;
+    position: relative;
+}
+[data-carousel-3d] [data-prev-button]:before, [data-carousel-3d] [data-next-button]:before{
+	background: transparent;
+	color: #333;
+	transition: all .5s;
+}
+
+[data-carousel-3d] [data-next-button]:hover:before, [data-carousel-3d] [data-prev-button]:hover:before{
+	background: transparent !important;
+    color: #333 !important;
+    transform: scale(1.2);
+}
+.sin-screenshot a:before {
+    background: #ccad52 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.sin-screenshot a:hover:before {
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+.screenshot-carousel { z-index: 9 }
+.screenshot-carousel img { width: 100% }
+
+/************************
+9. Price table
+*************************/
+
+#price {
+   background: #f2f2f2;
+}
+.single_price {
+    background-color: #ffffff;
+    border: medium none transparent;
+    box-shadow: 0 20px 30px 0px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 30px;
+    max-width: 400px;
+    transition: all .6s;
+}
+.single_price .price_top {
+    background: #3AB3DF;
+    color: #fff;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+}
+.single_price h3 {
+    margin: 15px 0;
+    font-size: 18px;
+}
+.single_price .price_top h1 span {
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.single_price .price_bottom {
+    padding: 25px 20px;
+}
+.price_bottom .price_btn {
+    display: inline-block;
+    padding: .5em 2em;
+    border: 2px solid #3AB3DF;
+    border-radius: 30px;
+    min-width: 100px;
+    font-size: 12px;
+    color: #333;
+}
+.price_sp .price_bottom {
+    background: #3498db;
+}
+.single_price ul {
+    margin-bottom: 30px;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+.single_price ul li {
+    margin-bottom: 10px;
+    list-style: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f2f2f2;
+}
+.price_btn {
+    display: inline-block;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    transition: all .6s;
+}
+.price_btn:hover {
+    background: #fff;
+    color: #333;
+}
+.single_price:hover {
+    background: #3498db;
+    color: #fff;
+    transform: scale(1.06);
+    -webkit-box-shadow: 0px 1px 14px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 14px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 14px -2px rgba(0, 0, 0, 0.75);
+}
+.single_price:hover .price_btn {
+    background: #fff;
+    color: #333;
+}
+.single_price:hover .price_bottom {
+    background: #3498db;
+}
+.single_price:hover .price_top {
+    background: #3498db;
+}
+
+/************************
+10. Download
+*************************/
+#download{
+	background: url(http://evoting.ust.edu.ng/img/slide.jpg) 0 0 no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	z-index: 1;
+	color: #fff;
+}
+.btn_download{
+	display:inline-block;
+	padding: 20px 40px;
+	color: #fff;
+	background: #3AB3DF;
+	transition: all .6s;
+	border: 1px solid #3AB3DF;
+}
+.btn_download i{
+	margin-right: 10px;
+}
+.btn_download:first-child{
+	border-bottom-left-radius: 30px;
+	border-top-left-radius: 30px;
+}
+.btn_download:last-child{
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+.btn_download:hover{
+	background: transparent;
+	border-color: #fff;
+    color: #fff;
+}
+
+
+/************************
+11. Blog
+*************************/
+
+
+.single_blog {
+    overflow: hidden;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.single_blog h4{
+	font-size: 18px;
+}
+.blog_Bottom span{
+	display: block;
+	padding-bottom: 10px;
+}
+.blog_img {
+    transition: all .3s;
+}
+
+.blog_Bottom {
+    padding: 20px;
+}
+.blog_Bottom p {
+    color: #666;
+    padding-bottom: 10px;
+}
+.blog_Bottom .blog_link {
+    color: #3AB3DF;
+    display: inline-block;
+    font-weight: 700;
+}
+.single_blog:hover .blog_img {
+    opacity: .5;
+}
+
+/************************
+12. Contact Form
+*************************/
+#contact_form{
+    background:#F2F2F2;
+    color: #fff;
+}
+.contact_area{
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+}
+.contact_form h3{
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#contact_form .contact_form{
+    background: #fff;
+    padding: 80px 80px 80px 50px;
+}
+.contact_form .form-control{
+    padding: 20px 10px;
+    border-radius: 2px;
+    background:transparent;
+    border: 1px solid #f2f2f2;
+    color: #333;
+    height: 100%;
+    -moz-color: #333;
+    -moz-box-sizing: border-box;
+}
+.contact_form button{
+    display: inline-block;
+    border:0;
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: #fff;
+    text-transform: capitalize;
+    background: #3AB3DF;
+    margin:auto;
+}
+.contact_form .success{
+    color: #3AB3DF;
+    padding: 15px 0;
+    display: block;
+    text-align: center;
+}
+
+.contact_form .field{
+    margin-bottom: 20px;
+}
+.contact_form .form-control:focus{
+    border-color: #3AB3DF;
+}
+.contact_form .form-control:hover{
+    border-color: #3AB3DF;
+}
+.contact_address{
+    background: #3AB3DF;
+    padding: 80px 80px 80px 50px;
+}
+.contact_address h3{
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 26px;
+}
+.contact_address p{
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 30px;
+}
+.contact_address ul{
+    list-style: none;
+    padding-left: 0;
+}
+.contact_address ul li{
+    display: block;
+    padding: 5px 0 0 40px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    position: relative;
+}
+.contact_address ul li i{
+    position: absolute;
+    left: 0;
+    top: 6px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+/************************
+13. Subscribe
+*************************/
+
+#subscribe{
+    background: #333;
+    color: #fff;
+}
+
+#subscribe form{
+    margin: 0 auto;
+    max-width: 570px;
+    position: relative;
+    width: 100%;
+}
+
+#subscribe form input{
+    background: #ffffff none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 50px;
+    box-shadow: none;
+    color: #999999;
+    height: 50px;
+    padding: 0 40px;
+    width: 100%;
+}
+#subscribe .sub_btn{
+    border: medium none;
+    line-height: 44px;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    border-radius: 30px;
+    min-width: 150px;
+    color: #fff;
+    top: 0;
+    height: 100%;
+    background: #3AB3DF;
+}
+.socialList{
+    list-style: none;
+    text-align: center;
+    margin-top: 30px;
+    padding-left: 0;
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+}
+.socialList li{
+    display: inline-block;
+}
+.socialList li a{
+    color: #fff;
+    display: inline-block;
+    margin: 0 20px;
+    transition: all .6s;
+}
+.socialList li a:hover{
+    color: #3AB3DF;
+}
+.socialList li a span{
+    display: inline-block !important;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.copyright p{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+
+/************************
+14. Back To Top
+*************************/
+
+.back-to-top {
+    background: #3AB3DF;
+    border-radius: 50%;
+    bottom: 30px;
+    display: none;
+    height: 35px;
+    line-height: 35px;
+    margin: 0;
+    position: fixed;
+    right: 30px;
+    text-decoration: none;
+    width: 35px;
+    z-index: 90;
+    text-align: center;
+    color: #fff;
+}
+.back-to-top:hover {
+    color: #fff;
+}

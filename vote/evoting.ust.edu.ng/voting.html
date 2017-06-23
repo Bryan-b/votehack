@@ -1,0 +1,142 @@
+<section id="feature" class="sec_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sec_head">
+                        <h3>Vote <span>Candidate</span></h3>
+                        <span class="sec_line"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="processDiv"></div>
+            <div class="row" id="displayDiv">
+                <!--<div class="col-md-4 wow fadeInLeft">
+                    <div class="single_blog">
+                        <div class="blog_img">
+                            <a href="#"><img src="img/img-1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="blog_Bottom">
+                            <span>May 25th 2016</span>
+                            <h4><a href="#">A day in the life of a professional fitness blogger</a></h4>
+                            <a class="btn btn-primary" href="#">Vote Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInUp">
+                    <div class="single_blog">
+                        <div class="blog_img">
+                            <a href="#"><img src="img/img-2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="blog_Bottom">
+                            <span>May 25th 2016</span>
+                            <h4><a href="#">A day in the life of a professional fitness blogger</a></h4>
+                            <a class="btn btn-primary" href="#">Vote Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInRight">
+                    <div class="single_blog">
+                        <div class="blog_img">
+                            <a href="#"><img src="img/img-3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="blog_Bottom">
+                            <span>May 25th 2016</span>
+                            <h4><a href="#">A day in the life of a professional fitness blogger</a></h4>
+                            <a class="btn btn-primary" href="#" onclick="showAjax('','includes/ajaxaction.php?Action=vote&c=1&p=1','processDiv')">Vote Now</a>
+                        </div>
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
+    </section>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" id="mtitle">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p id="mbody">Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    /*var cat = getItem('position');
+    var spage = getItem('spage');
+    var sdate = getItem("sdate");
+        var edate = getItem("edate");
+    showAjax('','includes/ajaxaction.php?Action=showCandidate&cat='+cat+'&spage='+spage+'&sdate='+sdate+'&edate='+edate,'displayDiv')
+    */
+    getCandidate();
+});
+
+    function getCandidate(){
+
+            var cat = getItem('position');
+            var spage = getItem('spage');
+            var sdate = getItem("sdate");
+            var edate = getItem("edate");
+				var postData = '';//$('#myform').serialize();
+			var formUrl = 'includes/ajaxactionb5e3.php?Action=showCandidate&amp;cat='+cat+'&spage='+spage+'&sdate='+sdate+'&edate='+edate;//$('#myform').attr("action");
+			$.ajax({
+				url:formUrl,
+				data:postData,
+				type: "POST",
+				dataType:'json',
+				success:function(response){
+                    //var resp = response.stringify();
+					if(response.status=='success'){
+                        $('#displayDiv').html("");
+                        var evt = ''; var evt1 = ''; var rec = '';
+                        //var data = jQuery.parseJSON(response.data);
+                        //alert(response.data.length);
+
+                        for(var i=0; i<=response.data.length; i++){
+
+                            var fname = response.data[i][1];
+                            var manifest2 = response.data[i][6].replace(/ /gi,"~");
+                            var manifest = response.data[i][6];
+
+                            evt1 = $('<div><a class="btn btn-primary" href="#" onclick='+"'"+'$("#mbody").text($(this).attr("manifest")); viewProfile($(this).attr("fname"),$(this).attr("manifest"));'+"'"+'>manifesto </a></div>');
+                            evt1.find('a').attr('manifest',manifest);
+                            evt1.find('a').attr('fname',fname);
+                            evt1 = evt1.html();
+                            var e = response.data[i][5].replace(/ /gi,"~");;
+                            if(spage == "student"){
+                        if(response.vstatus=="Yes") {
+                            evt = '<a class="btn btn-primary" href="#" onclick=doVoting("'+cat+'","'+response.data[i][4]+'","'+e+'");>Vote Now</a>';
+                        }else{evt = 'Unavailable';}
+                        }else{evt = 'You cant vote';}
+
+                            rec = '<div class="col-md-3 wow fadeInLeft"> <div class="single_blog"> <div class="blog_img">            <a href="#"><img src="http://ecampus.ust.edu.ng/applpics/users/'+response.data[i][3]+'.jpg" height="200" width="200" alt="candidate"></a> </div><div class="blog_Bottom">            <span>'+response.data[i][1]+' '+response.data[i][2]+'</span><h4><a href="#">'+response.data[i][7]+'</a></h4> '+evt1+' '+evt+'    </div>  </div> </div>';
+                            $('#displayDiv').append(rec);
+                        }
+
+                    }else{
+						$('#displayDiv').html('<div class="alert alert-danger">'+response.data+'</div>');
+					}
+				},
+				error:function(jqXHR, txtstatus, errorThrown){
+					$('#displayDiv').val('error posting');
+				}
+			});
+
+		}
+
+</script>

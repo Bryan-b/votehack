@@ -1,0 +1,48 @@
+<section id="feature" class="sec_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sec_head">
+                        <h3>Election <span>My Votes</span></h3>
+                        <span class="sec_line"></span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center" id="displayDiv">
+              <div class="panel-body">
+                            <table class="table table-striped table-bordered" id="table2" data-toggle="table">
+                                <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Position</th>
+                                    <th>Candidate Name</th>
+                                    <th>Voted date</th>
+                                </tr>
+                                </thead>
+                                <tbody id="recordsDiv">
+                                <!--<tr>
+                                    <td>1</td>
+                                    <td>Connie</td>
+                                    <td>Reynolds</td>
+                                    <td>Connie.Reynolds69</td>
+                                    <td>Connie12@hotmail.com</td>
+                                    <td>7/1/2016  11:46:26 AM</td>
+                                </tr>-->
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+            </div>
+        </div>
+    </section>
+
+<script>
+$(document).ready(function(){
+    var vid = getItem('userid');
+   showAjax('','includes/ajaxactionc74f.html?Action=showMyvote&amp;vid='+vid,'recordsDiv')
+
+});
+</script>

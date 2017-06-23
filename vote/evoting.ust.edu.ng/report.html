@@ -1,0 +1,84 @@
+<section id="feature" class="sec_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sec_head">
+                        <h3>Election <span>Reports</span></h3>
+                        <span class="sec_line"></span>
+
+                    </div>
+                </div>
+            </div>
+             <div class="container">
+            <div class="row contact_area">
+                <div class="col-md-7 contact_form wow fadeInUp">
+                    <h3>Please select position</h3>
+                    <div class="row">
+                        <form id="ajax-contact" method="post" action="http://evoting.ust.edu.ng/report.html?" name="registration">
+                            <div class="field col-sm-12" id="selectPos">
+                 <select class="form-control select21" id="position"  title="" name="position">
+                    <option value="PRESIDENT">PRESIDENT</option>
+
+                 </select>
+                            </div>
+
+
+                            <div id="form-messages"></div>
+                        <!--    <div class="field col-sm-6">
+                                <button type="button" onclick="showAjax('ajax-contact','includes/ajaxaction.php?Action=chkuser','form-messages')">Sign in</button>
+                            </div> -->
+                        </form>
+                    </div>
+
+                </div>
+          <!--      <div class="col-md-5 contact_address">
+
+                </div>-->
+            </div>
+        </div>
+            <div class="row text-center" id="displayDiv">
+              <div class="panel-body">
+                            <table class="table table-striped table-bordered" id="table2" data-toggle="table">
+                                <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Position</th>
+                                    <th>Candidate Name</th>
+                                    <th>Picture</th>
+                                    <th>Total Votes</th>
+                                </tr>
+                                </thead>
+                                <tbody id="recordsDiv">
+                                <!--<tr>
+                                    <td>1</td>
+                                    <td>Connie</td>
+                                    <td>Reynolds</td>
+                                    <td>Connie.Reynolds69</td>
+                                    <td>Connie12@hotmail.com</td>
+                                    <td>7/1/2016  11:46:26 AM</td>
+                                </tr>-->
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+            </div>
+        </div>
+    </section>
+
+<script>
+$(document).ready(function(){
+    var pid = '';
+   showAjax('','includes/ajaxaction6baf.php?Action=showReport&amp;pid='+pid,'recordsDiv');
+   populatePosition();
+});
+    function reportByPos(){
+        var pid = $("#position").val();
+   showAjax('','includes/ajaxaction6baf.php?Action=showReport&amp;pid='+pid,'recordsDiv');
+    }
+    function populatePosition(){
+
+        showAjax('','includes/ajaxactionf0d1.html?Action=getPosition','selectPos');
+    }
+</script>
